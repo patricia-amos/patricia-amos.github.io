@@ -28,8 +28,8 @@
 					<nav id="nav">
 						<ul class="links">
 							<li><a href="index.html">PROJECTS</a></li>
-							<li><a href="Snowdon.html">BIM QA Dashboard</a></li>
-							<li class="active"><a href="Revit Automation + AI.html">REVIT AUTOMATION</a></li>
+							<li class="active"><a href="Revit Automation + AI.html">REVIT AUTOMATION + AI</a></li>
+							<li><a href="Snowdon.html">BIM QA DASHBOARD</a></li>
 							<li><a href="EmployeeAttrition.html">EMPLOYEE ATTRITION DASHBOARD</a></li>
 						</ul>
 						</ul>
@@ -48,8 +48,8 @@
 							<header class="major">
 								<h1>BIM AUTOMATION + AI<br />
 								SAMPLE PROJECTS</h1>
-								<p>These are 3 automation projects, namely a Populate Multiple Sheet Parameter, Replacing text notes based on excel dictionary, and an asbuilt text note updater with AI.
-									These are run through Revit 2025's sample architecture project Snowdown towers. 
+								<p>Three Dynamo workflows for cleaning up sheet documentation in Revit. 
+								Two are rule-based automation; the third adds AI, using a local language model (Ollama) to rewrite text notes.
 								</p>
 							</header>
 
@@ -68,7 +68,7 @@
 									</p>
 									<a class="image fit"><img src="images/PopulateMultipleSheetParameters_Demo.GIF" alt="" /></a>
 									<p class="statement">
-										This script streamlines sheet management by allowing users to batch-populate parameters across multiple sheets simultaneously. 
+										<b>The Solution:</b> This script streamlines sheet management by allowing users to batch-populate parameters across multiple sheets simultaneously. 
 										To keep the workflow organized, sheets are dynamically grouped based on a user-selected grouping parameter. Users input their 
 										target parameter names and desired values through an intuitive, interactive UI, which also offers the flexibility to dynamically 
 										add and modify multiple parameters in a single run. Upon completion, the script generates a comprehensive execution report that 
@@ -92,12 +92,10 @@
 										consistently omitted, updated, or rewritten to reflect field reality. Relying on traditional methods forces BIM technicians to manually scan every single 
 										sheet to locate and update each individual text note, creating a massive bottleneck that increases the risk of human error and missed text strings.
 									</p>
-									<a class="image fit"><img src="images/ReplaceTextNotesBasedOnExcelDictionary_ExcelDictionary.png" alt=""  /></a>
-									<a class="image fit"><img src="images/ReplaceTextNotesBasedOnExcelDictionary_Flow1.png" alt=""  /></a>
-									<a class="image fit"><img src="images/ReplaceTextNotesBasedOnExcelDictionary_Flow2.png" alt=""  /></a>
-									<a class="image fit"><img src="images/ReplaceTextNotesBasedOnExcelDictionary_Flow3.png" alt=""  /></a>
+									<a class="image fit"><img src="images/ReplaceTextNotesBasedOnExcelDictionary_Demo.gif" alt=""  /></a>
+
 									<p class="statement">
-										This script uses an Excel dictionary containing two columns: words to find and their corresponding replacements. When executed, the script prompts the 
+										<b>The Solution:</b> This script uses an Excel dictionary containing two columns: words to find and their corresponding replacements. When executed, the script prompts the 
 										user to enter the dictionary file path, the relevant worksheet name, and the parameter name and value used to filter the target sheets. Once complete, 
 										it outputs the sheet numbers alongside the updated text notes.
 									</p>
@@ -119,7 +117,13 @@
 										and seamlessly translate design-phase phrasing into precise As-Built documentation.
 
 									</p>
-
+									<a class="image fit"><img src="images/AIAssistedTextNoteUpdater_Demo.gif" alt=""  /></a>	
+									
+									<p class="statement"> 
+										<br /><b>The Solution:</b> This script references an excel dictionary. The dictionary contains 2 columns which are words to find and an equivalent replacement for that word. 
+										When running the script, the user will input the dictionary file location, the sheet name inside the excel containing the dictionary, parameter name of 
+										and value that would filter the needed sheets. After running the script, an excel report would be exported and reflect the sheet number and the updated text notes. 
+									</p>
 									<div class="workflow">
 										<div>
 											<span>01</span>
@@ -142,11 +146,6 @@
 											<p>Dynamo + Python</p>
 										</div>
 									</div>
-									<p class="statement"> 
-										<br />This script references an excel dictionary. The dictionary contains 2 columns which are words to find and an equivalent replacement for that word. 
-										When running the script, the user will input the dictionary file location, the sheet name inside the excel containing the dictionary, parameter name of 
-										and value that would filter the needed sheets. After running the script, an excel report would be exported and reflect the sheet number and the updated text notes. 
-									</p>
 								</div>
 							</div>
 
