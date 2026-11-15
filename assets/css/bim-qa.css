@@ -1,0 +1,221 @@
+/* ==========================================================
+   BIM QA Dashboard page
+   Save as assets/css/bim-qa.css (loaded after main.css)
+   ========================================================== */
+
+/* ==========================================================
+   TYPOGRAPHY
+   - Every big heading: one size, centered, sentence case, semi-bold
+   - Second line of a heading: italic, regular weight
+   - Text under a heading: left-aligned
+   Selectors start with #main so they beat the template's styles.
+   ========================================================== */
+
+/* One size for every big heading. Change it here and they all follow. */
+:root {
+    --heading-size: 1.6rem;
+}
+
+#main .post h1,
+#main .post h2,
+#main .post .intro-header h3 {
+    font-size: var(--heading-size);
+    font-weight: 600;
+    line-height: 1.35;
+    letter-spacing: 0;
+    text-transform: none;       /* sentence case, exactly as typed in the HTML */
+    text-align: center;
+    border-bottom: 0;
+    padding-bottom: 0;
+}
+
+/* Page title at the very top: the only uppercase heading */
+#main .post h1 {
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+#main .post h1 em,
+#main .post h2 em,
+#main .post .intro-header h3 em {
+    font-weight: 400;
+    text-transform: none;
+}
+
+/* Short intro text under the page title stays centered with the title */
+#main .post header.major > p {
+    text-align: center;
+    font-size: 1rem;
+    line-height: 1.7;
+    text-transform: none;
+    letter-spacing: 0;
+    font-weight: 400;
+}
+
+/* Small headings inside cards and rows */
+.workflow > div h3,
+.qa-feature h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 0;
+    text-transform: none;
+}
+
+/* ---------- Body text: left-aligned under the centered headings ---------- */
+.post p {
+    text-align: left;
+    line-height: 1.8;
+    margin: 0 0 1.25rem 0;
+}
+
+/* ---------- Power BI embed ---------- */
+.powerbi-container {
+    width: 100%;
+    max-width: none;            /* fills the whole text column */
+    margin: 0 auto 0.5rem;      /* small gap between the dashboard and its caption */
+    aspect-ratio: 800 / 486;    /* Power BI default embed shape; resizes with the browser */
+}
+.powerbi-container iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+}
+
+/* Caption directly under the dashboard */
+.post .embed-caption {
+    margin: 0;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    text-align: left;
+    opacity: 0.65;
+}
+
+/* ---------- Heading blocks ---------- */
+.intro-header,
+.project-block header.major,
+.story-head {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+/* ---------- Every section: same space above, same divider line ---------- */
+.project-block,
+.story,
+.closing {
+    margin-top: 4rem;
+    padding-top: 3rem;
+    border-top: 1px solid rgba(160, 160, 160, 0.3);
+}
+
+/* ---------- The four questions ---------- */
+.problem-questions {
+    margin: 2rem 0;
+    padding-left: 1.5rem;
+    border-left: 3px solid #18bfef;
+}
+.problem-questions p {
+    margin: 0 0 0.6rem 0;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+/* ---------- Question and answer pairs ---------- */
+.post .qa {
+    margin: 1.75rem 0 0;
+}
+.post .qa h3 {
+    font-size: 1.1rem;          /* same as the other small headings */
+    font-weight: 600;
+    letter-spacing: 0;
+    text-transform: none;
+    line-height: 1.4;
+    margin: 0 0 0.35rem;        /* small gap between question and answer */
+}
+.post .qa p {
+    margin: 0;
+    line-height: 1.7;
+}
+
+/* ---------- Workflow steps: 4 cards in a row ---------- */
+.workflow {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
+    margin: 2rem 0 0;
+}
+.workflow > div {
+    border: 1px solid rgba(160, 160, 160, 0.3);
+    padding: 1.5rem 1rem;
+    text-align: center;
+}
+.workflow > div span {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    opacity: 0.6;
+}
+.workflow > div h3 {
+    margin: 0.5rem 0;
+}
+.workflow > div p {
+    margin: 0;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    text-align: center;         /* text inside the boxes is centered */
+}
+
+/* ---------- "What does it make easier" rows ---------- */
+.qa-feature {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+}
+.qa-feature > span {
+    font-size: 1.25rem;
+    font-weight: 600;
+    opacity: 0.4;
+    min-width: 2.5rem;
+}
+.qa-feature h3 {
+    margin: 0 0 0.4rem;
+}
+.qa-feature p {
+    margin: 0;
+}
+
+/* ---------- GitHub button: centered under its text ---------- */
+.closing .actions,
+.project-block .actions {
+    display: flex;
+    justify-content: center;    /* centers the button on the page */
+    margin: 2rem 0 0;
+    padding: 0;
+    list-style: none;
+}
+.closing .actions li,
+.project-block .actions li {
+    padding: 0;                 /* removes the template's left offset so it is truly centered */
+}
+
+/* ---------- Footer email ---------- */
+.contact-email {
+    text-align: left;           /* sits next to the label, in line with the social icons */
+    margin: 0;
+}
+
+/* ---------- Phones ---------- */
+@media (max-width: 736px) {
+    :root {
+        --heading-size: 1.3rem;
+    }
+    .powerbi-container {
+        aspect-ratio: 4 / 3;    /* taller on phones so the report isn't a thin strip */
+    }
+    .workflow {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

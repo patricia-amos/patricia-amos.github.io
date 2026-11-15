@@ -1,0 +1,204 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>BIM QA Dashboard - Snowdon Towers</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!-- Custom styles. Loads AFTER main.css so it overrides the template. -->
+		<link rel="stylesheet" href="assets/css/bim-qa.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">PORTFOLIO</a>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li><a href="index.html">PROJECTS</a></li>
+							<li><a href="Snowdon.html">BIM QA Dashboard</a></li>
+							<li class="active"><a href="Revit Automation + AI.html">REVIT AUTOMATION</a></li>
+							<li><a href="EmployeeAttrition.html">EMPLOYEE ATTRITION DASHBOARD</a></li>
+						</ul>
+						</ul>
+						<ul class="icons">
+							<li><a href="https://www.linkedin.com/in/patricia-amos/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+							<li><a href="https://github.com/patricia-amos" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<section class="post">
+
+							<!-- ================= HERO ================= -->
+							<header class="major">
+								<h1>BIM AUTOMATION + AI<br />
+								SAMPLE PROJECTS</h1>
+								<p>These are 3 automation projects, namely a Populate Multiple Sheet Parameter, Replacing text notes based on excel dictionary, and an asbuilt text note updater with AI.
+									These are run through Revit 2025's sample architecture project Snowdown towers. 
+								</p>
+							</header>
+
+							<!-- ================= 1. POPULATE MULTIPLE TITLE BLOCK SHEET PARAMETERS ================= -->
+							<div class="story">
+								<div class="story-head">
+									<h2>1. Populate Multiple Title Block Sheet Parameters<br />
+									</h2>
+								</div>
+								<div class="story-body">
+									<p>
+										<b>The Problem:</b> Revit title blocks contain multiple parameters whose values frequently change throughout a project's duration. 
+										In practice, managing these changes typically relies on two manual methods: generating a sheet list schedule to input values 
+										cell-by-cell, or selecting individual sheets to update their properties via the Properties palette. Both approaches are incredibly 
+										tedious and time-consuming, scaling poorly when dealing with dozens or hundreds of sheets across a large-scale project. 
+									</p>
+									<a class="image fit"><img src="images/PopulateMultipleSheetParameters_Demo.GIF" alt="" /></a>
+									<p class="statement">
+										This script streamlines sheet management by allowing users to batch-populate parameters across multiple sheets simultaneously. 
+										To keep the workflow organized, sheets are dynamically grouped based on a user-selected grouping parameter. Users input their 
+										target parameter names and desired values through an intuitive, interactive UI, which also offers the flexibility to dynamically 
+										add and modify multiple parameters in a single run. Upon completion, the script generates a comprehensive execution report that 
+										highlights successful updates, identifies errors or missing parameters, and explicitly flags the affected sheet numbers and titles 
+										for quick verification.
+									</p>
+								</div>
+							</div>
+
+
+							<!-- ================= 2. REPLACE TEXT NOTES BASED ON EXCEL DICTIONARY ================= -->
+							<div class="story">
+								<div class="story-head">
+									<h2>2. Replace Text Notes Based On Excel Dictionary<br />
+									</h2>
+								</div>
+								<div class="story-body">
+									<p>
+										<b>The Problem:</b> Managing and updating the high volume of text notes across multiple Revit sheets is a notoriously manual and time-consuming process. 
+										A primary use case for this is converting design-phase IFC sheets into As-Built documentation, which requires specific design terminologies to be 
+										consistently omitted, updated, or rewritten to reflect field reality. Relying on traditional methods forces BIM technicians to manually scan every single 
+										sheet to locate and update each individual text note, creating a massive bottleneck that increases the risk of human error and missed text strings.
+									</p>
+									<a class="image fit"><img src="images/ReplaceTextNotesBasedOnExcelDictionary_ExcelDictionary.png" alt=""  /></a>
+									<a class="image fit"><img src="images/ReplaceTextNotesBasedOnExcelDictionary_Flow1.png" alt=""  /></a>
+									<a class="image fit"><img src="images/ReplaceTextNotesBasedOnExcelDictionary_Flow2.png" alt=""  /></a>
+									<a class="image fit"><img src="images/ReplaceTextNotesBasedOnExcelDictionary_Flow3.png" alt=""  /></a>
+									<p class="statement">
+										This script uses an Excel dictionary containing two columns: words to find and their corresponding replacements. When executed, the script prompts the 
+										user to enter the dictionary file path, the relevant worksheet name, and the parameter name and value used to filter the target sheets. Once complete, 
+										it outputs the sheet numbers alongside the updated text notes.
+									</p>
+								</div>
+							</div>
+							<!-- ================= 3. AI ASSISTED AS-BUILT TEXT NOTE UPDATE ================= -->
+							<div class="story">
+								<div class="story-head">
+									<h2>3. AI Assited Text Note Updater<br />
+									</h2>
+								</div>
+								<div class="story-body">
+									<p>
+										<b>The Problem:</b> While item 2 automates standard text replacements, for the as-built context, it possesses inherent limitations that can be significantly 
+										improved by incorporating AI. Relying on a fixed dictionary restricts replacements to strict, pre-defined word matches, causing the script to miss 
+										typos, case variations, or unpredictable formatting common in IFC files. Furthermore, because a dictionary completely ignores sentence grammar, tense, 
+										and context, it risks making blind find-and-replace errors that result in awkward, unprofessional syntax. Upgrading the workflow with AI resolves 
+										these issues by enabling context-aware interpretation, allowing the script to intelligently adapt sentence structure, fix grammatical context, 
+										and seamlessly translate design-phase phrasing into precise As-Built documentation.
+
+									</p>
+
+									<div class="workflow">
+										<div>
+											<span>01</span>
+											<h3>Extract Text Notes</h3>
+											<p>Dynamo</p>
+										</div>
+										<div>
+											<span>02</span>
+											<h3>AI Suggestion</h3>
+											<p>Ollama AI</p>
+										</div>
+										<div>
+											<span>03</span>
+											<h3>User Review and Approval</h3>
+											<p>JSON + Dynamo + Python</p>
+										</div>
+										<div>
+											<span>04</span>
+											<h3>Apply and Export Report</h3>
+											<p>Dynamo + Python</p>
+										</div>
+									</div>
+									<p class="statement"> 
+										<br />This script references an excel dictionary. The dictionary contains 2 columns which are words to find and an equivalent replacement for that word. 
+										When running the script, the user will input the dictionary file location, the sheet name inside the excel containing the dictionary, parameter name of 
+										and value that would filter the needed sheets. After running the script, an excel report would be exported and reflect the sheet number and the updated text notes. 
+									</p>
+								</div>
+							</div>
+
+
+							<!-- ================= 4. RESULT + GITHUB ================= -->
+							<div class="closing">
+								<ul class="actions">
+									<li><a href="https://github.com/patricia-amos/Portfolio/tree/main/Dynamo%20%2B%20Power%20BI%20dashboard%20-%20Snowdon%20Towers" class="button primary">View project on GitHub</a></li>
+								</ul>
+							</div>
+
+						</section>
+						<!-- /Post -->
+
+					</div>
+					<!-- /Main -->
+
+
+				<!-- Footer -->
+					<footer id="footer">
+
+						<section class="split contact">
+							<section>
+								<h3>Email</h3>
+								<p class="contact-email"><a href="mailto:itspatriciaamos@gmail.com">itspatriciaamos@gmail.com</a></p>
+							</section>
+							<section>
+								<h3>Social</h3>
+								<ul class="icons alt">
+									<li><a href="https://www.linkedin.com/in/patricia-amos/" class="icon brands alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
+									<li><a href="https://github.com/patricia-amos" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+								</ul>
+							</section>
+						</section>
+
+					</footer>
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
