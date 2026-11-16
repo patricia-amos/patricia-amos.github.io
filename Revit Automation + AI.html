@@ -35,7 +35,7 @@
 						</ul>
 						<ul class="icons">
 							<li><a href="https://www.linkedin.com/in/patricia-amos/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
-							<li><a href="https://github.com/patricia-amos" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+							<li><a href="https://github.com/patricia-amos/Portfolio" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
 						</ul>
 					</nav>
 
@@ -56,96 +56,245 @@
 							<!-- ================= 1. POPULATE MULTIPLE TITLE BLOCK SHEET PARAMETERS ================= -->
 							<div class="story">
 								<div class="story-head">
-									<h2>1. Populate Multiple Title Block Sheet Parameters<br />
-									</h2>
+									<h2>1. Populate multiple title block sheet parameters</h2>
+									<p class="story-subtitle">Batch-update title block parameters across hundreds of sheets in one run.</p>
+									<p class="story-tools">Revit · Dynamo · Python</p>
 								</div>
 								<div class="story-body">
 									<p>
-										<b>The Problem:</b> Revit title blocks contain multiple parameters whose values frequently change throughout a project's duration. 
-										In practice, managing these changes typically relies on two manual methods: generating a sheet list schedule to input values 
-										cell-by-cell, or selecting individual sheets to update their properties via the Properties palette. Both approaches are incredibly 
-										tedious and time-consuming, scaling poorly when dealing with dozens or hundreds of sheets across a large-scale project. 
+										<b>The Problem:</b> Title block values change constantly during a project. Updating them means either typing
+										cell-by-cell in a sheet list schedule or editing each sheet in the Properties palette. Both are slow, repetitive,
+										and error-prone, and they get worse with every sheet you add.
+									</p>
+									
+									<p class="statement">
+										<b>The Solution:</b> A Dynamo script that updates multiple title block parameters across any number of sheets at once.
+										Sheets are grouped by a parameter you choose, you enter the values through a simple UI, and an execution report
+										confirms exactly what changed.
 									</p>
 									<a class="image fit"><img src="images/PopulateMultipleSheetParameters_Demo.GIF" alt="" /></a>
-									<p class="statement">
-										<b>The Solution:</b> This script streamlines sheet management by allowing users to batch-populate parameters across multiple sheets simultaneously. 
-										To keep the workflow organized, sheets are dynamically grouped based on a user-selected grouping parameter. Users input their 
-										target parameter names and desired values through an intuitive, interactive UI, which also offers the flexibility to dynamically 
-										add and modify multiple parameters in a single run. Upon completion, the script generates a comprehensive execution report that 
-										highlights successful updates, identifies errors or missing parameters, and explicitly flags the affected sheet numbers and titles 
-										for quick verification.
-									</p>
+
+									<p><b>How it works:</b></p>
+									<div class="workflow">
+										<div>
+											<span>01</span>
+											<h3>Choose grouping</h3>
+											<p>Sheets are organized by a parameter you select</p>
+										</div>
+										<div>
+											<span>02</span>
+											<h3>Enter values</h3>
+											<p>Add parameter names and values in the UI</p>
+										</div>
+										<div>
+											<span>03</span>
+											<h3>Run script</h3>
+											<p>Values are written to every sheet in each group</p>
+										</div>
+										<div>
+											<span>04</span>
+											<h3>Review report</h3>
+											<p>Successes, errors and missing parameters are listed</p>
+										</div>
+									</div>
+
+									<p style="margin-top: 2.5rem;"><b>Key features:</b></p>
+									<div class="qa-feature">
+										<span>01</span>
+										<div>
+											<h3>Batch updates</h3>
+											<p>Update multiple parameters across all sheets in a single run.</p>
+										</div>
+									</div>
+									<div class="qa-feature">
+										<span>02</span>
+										<div>
+											<h3>Dynamic grouping</h3>
+											<p>Group sheets by any sheet parameter, with no script changes needed.</p>
+										</div>
+									</div>
+									<div class="qa-feature">
+										<span>03</span>
+										<div>
+											<h3>Execution report</h3>
+											<p>Flags errors and missing parameters with the affected sheet numbers and titles for quick verification.</p>
+										</div>
+									</div>
+
+									<!-- Results: add your timed test here -->
 								</div>
 							</div>
+
 
 
 							<!-- ================= 2. REPLACE TEXT NOTES BASED ON EXCEL DICTIONARY ================= -->
 							<div class="story">
 								<div class="story-head">
-									<h2>2. Replace Text Notes Based On Excel Dictionary<br />
-									</h2>
+									<h2>2. Replace text notes based on Excel dictionary</h2>
+									<p class="story-subtitle">Standardize wording across hundreds of Revit text notes with a simple Excel find-and-replace dictionary.</p>
+									<p class="story-tools">Revit · Dynamo · Python · Excel</p>
 								</div>
 								<div class="story-body">
 									<p>
-										<b>The Problem:</b> Managing and updating the high volume of text notes across multiple Revit sheets is a notoriously manual and time-consuming process. 
-										A primary use case for this is converting design-phase IFC sheets into As-Built documentation, which requires specific design terminologies to be 
-										consistently omitted, updated, or rewritten to reflect field reality. Relying on traditional methods forces BIM technicians to manually scan every single 
-										sheet to locate and update each individual text note, creating a massive bottleneck that increases the risk of human error and missed text strings.
+										<b>The Problem:</b> Text notes on Revit sheets, such as general notes, keynotes and specification callouts, tend to
+										drift in wording across a project. Standardizing a term, correcting a spelling or updating a phrase usually means
+										opening each sheet and view to edit notes one by one, or using Revit's Find/Replace tool, which only handles one
+										search term at a time. Both are tedious, easy to get wrong, and scale poorly across dozens or hundreds of sheets.
 									</p>
-									<a class="image fit"><img src="images/ReplaceTextNotesBasedOnExcelDictionary_Demo.gif" alt=""  /></a>
-
+									
 									<p class="statement">
-										<b>The Solution:</b> This script uses an Excel dictionary containing two columns: words to find and their corresponding replacements. When executed, the script prompts the 
-										user to enter the dictionary file path, the relevant worksheet name, and the parameter name and value used to filter the target sheets. Once complete, 
-										it outputs the sheet numbers alongside the updated text notes.
+										<b>The Solution:</b> A Dynamo script that reads a two-column Excel dictionary of words to find and what to replace
+										them with, then checks every text note on your selected sheets, and the views placed on them, against every entry.
+										Notes with a match are rewritten in the model, and the output lists each changed note with its sheet number and
+										updated text.
 									</p>
+									<a class="image fit"><img src="images/ReplaceTextNotesBasedOnExcelDictionary_Demo.gif" alt="" /></a>
+
+									<p><b>How it works:</b></p>
+									<div class="workflow">
+										<div>
+											<span>01</span>
+											<h3>Enter inputs</h3>
+											<p>Sheet filter parameter and value, dictionary file, and worksheet name</p>
+										</div>
+										<div>
+											<span>02</span>
+											<h3>Collect notes</h3>
+											<p>Dynamo gathers text notes on the filtered sheets and their views</p>
+										</div>
+										<div>
+											<span>03</span>
+											<h3>Replace text</h3>
+											<p>Each dictionary entry is matched as a whole word and applied</p>
+										</div>
+										<div>
+											<span>04</span>
+											<h3>Review output</h3>
+											<p>Only the changed notes are listed with their sheet numbers</p>
+										</div>
+									</div>
+
+
+									<p style="margin-top: 2.5rem;"><b>Key features:</b></p>
+									<div class="qa-feature">
+										<span>01</span>
+										<div>
+											<h3>Dictionary-driven</h3>
+											<p>Many find-and-replace pairs in a single run, and a wording change only needs an Excel edit, not a script edit.</p>
+										</div>
+									</div>
+									<div class="qa-feature">
+										<span>02</span>
+										<div>
+											<h3>Whole-word matching</h3>
+											<p>Replaces "is" without touching "isometric", and handles as-typed, UPPERCASE and Capitalized forms from one row.</p>
+										</div>
+									</div>
+									<div class="qa-feature">
+										<span>03</span>
+										<div>
+											<h3>Targeted by sheet group</h3>
+											<p>Filter by any sheet parameter to clean up one discipline, or only the sheets being issued.</p>
+										</div>
+									</div>
+									<div class="qa-feature">
+										<span>04</span>
+										<div>
+											<h3>Reusable across projects</h3>
+											<p>Keep separate dictionary sheets, such as abbreviations, UK to US spelling, fire rating wording and typos, and pick one per run.</p>
+										</div>
+									</div>
+
+									<!-- Results: add your timed test here -->
 								</div>
 							</div>
 							<!-- ================= 3. AI ASSISTED AS-BUILT TEXT NOTE UPDATE ================= -->
 							<div class="story">
 								<div class="story-head">
-									<h2>3. AI Assited Text Note Updater<br />
-									</h2>
+									<h2>3. AI assisted text note updater</h2>
+									<p class="story-subtitle">Rewrite Revit text notes into as-built wording with a local AI model, with every change approved by the user.</p>
+									<p class="story-tools">Revit · Dynamo · Python · Ollama</p>
 								</div>
 								<div class="story-body">
 									<p>
-										<b>The Problem:</b> While item 2 automates standard text replacements, for the as-built context, it possesses inherent limitations that can be significantly 
-										improved by incorporating AI. Relying on a fixed dictionary restricts replacements to strict, pre-defined word matches, causing the script to miss 
-										typos, case variations, or unpredictable formatting common in IFC files. Furthermore, because a dictionary completely ignores sentence grammar, tense, 
-										and context, it risks making blind find-and-replace errors that result in awkward, unprofessional syntax. Upgrading the workflow with AI resolves 
-										these issues by enabling context-aware interpretation, allowing the script to intelligently adapt sentence structure, fix grammatical context, 
-										and seamlessly translate design-phase phrasing into precise As-Built documentation.
-
+										<b>The Problem:</b> Models converted from IFC still carry text notes written as design intent, such as "Install anchors
+										as required" or "Contractor to verify dimensions on site". As-built documentation should read as a record of what was
+										done. The dictionary approach in entry 2 handles only word or exact phrase replacements. It does not read the whole
+										sentence, so it cannot adjust tense or grammar, remove a clause that no longer applies, or know when a note should be
+										removed entirely. Automating this more intelligently calls for AI, but cloud-based tools can be a security risk, since
+										they send drawing text outside the project's controlled environment and may break confidentiality requirements.
 									</p>
-									<a class="image fit"><img src="images/AIAssistedTextNoteUpdater_Demo.gif" alt=""  /></a>	
 									
-									<p class="statement"> 
-										<br /><b>The Solution:</b> This script references an excel dictionary. The dictionary contains 2 columns which are words to find and an equivalent replacement for that word. 
-										When running the script, the user will input the dictionary file location, the sheet name inside the excel containing the dictionary, parameter name of 
-										and value that would filter the needed sheets. After running the script, an excel report would be exported and reflect the sheet number and the updated text notes. 
+									<p class="statement">
+										<b>The Solution:</b> A Dynamo workflow that collects the text notes on your chosen sheets and their views, then uses a
+										local Ollama model to rewrite them following editable rules. A browser review page shows each original note beside the
+										proposed one, and only the notes you approve are written back to Revit. Nothing is sent outside your computer.
 									</p>
+									<a class="image fit"><img src="images/AIAssistedTextNoteUpdater_Demo.gif" alt="" /></a>
+									<p><b>How it works:</b></p>
 									<div class="workflow">
 										<div>
 											<span>01</span>
-											<h3>Extract Text Notes</h3>
-											<p>Dynamo</p>
+											<h3>Extract notes</h3>
+											<p>Dynamo collects text notes from the filtered sheets and their views</p>
 										</div>
 										<div>
 											<span>02</span>
-											<h3>AI Suggestion</h3>
-											<p>Ollama AI</p>
+											<h3>AI suggests</h3>
+											<p>Local Ollama model rewrites notes using editable rules</p>
 										</div>
 										<div>
 											<span>03</span>
-											<h3>User Review and Approval</h3>
-											<p>JSON + Dynamo + Python</p>
+											<h3>User review</h3>
+											<p>Approve, reject or edit each note in the browser review page</p>
 										</div>
 										<div>
 											<span>04</span>
-											<h3>Apply and Export Report</h3>
-											<p>Dynamo + Python</p>
+											<h3>Apply and report</h3>
+											<p>Approved notes are written to Revit and logged in Excel</p>
 										</div>
 									</div>
+
+									<a class="image fit" style="margin-top: 2rem;"><img src="images/AIAssistedTextNoteUpdater_TextNoteReviewUI.png" alt="" /></a>
+
+									<p style="margin-top: 2.5rem;"><b>Key features:</b></p>
+									<div class="qa-feature">
+										<span>01</span>
+										<div>
+											<h3>Human in the loop</h3>
+											<p>Nothing is applied without approval, and flagged notes are never bulk-approved.</p>
+										</div>
+									</div>
+									<div class="qa-feature">
+										<span>02</span>
+										<div>
+											<h3>Local and private</h3>
+											<p>Runs on Ollama, so no project text leaves the machine.</p>
+										</div>
+									</div>
+									<div class="qa-feature">
+										<span>03</span>
+										<div>
+											<h3>Understands sentences</h3>
+											<p>Handles tense, whole-phrase removal, and deletes notes that end up empty.</p>
+										</div>
+									</div>
+									<div class="qa-feature">
+										<span>04</span>
+										<div>
+											<h3>Rules written in plain language</h3>
+											<p>The AI's instructions are simple, editable text rather than code. Adapt the wording rules to each project's requirements, with no programming knowledge needed.</p>
+										</div>
+									</div>
+									<div class="qa-feature">
+										<span>05</span>
+										<div>
+											<h3>Built-in safety checks</h3>
+											<p>Protects numbers, tags and acronyms, flags unexpected removals, and offers a dry run mode before anything is applied.</p>
+										</div>
+									</div>
+
+									<!-- Results: add your timed test here -->
 								</div>
 							</div>
 
@@ -153,7 +302,7 @@
 							<!-- ================= 4. RESULT + GITHUB ================= -->
 							<div class="closing">
 								<ul class="actions">
-									<li><a href="https://github.com/patricia-amos/Portfolio/tree/main/Dynamo%20%2B%20Power%20BI%20dashboard%20-%20Snowdon%20Towers" class="button primary">View project on GitHub</a></li>
+									<li><a href="https://github.com/patricia-amos/Portfolio/tree/main/BIM%20Automation%20%2B%20AI%20Projects" class="button primary">View project on GitHub</a></li>
 								</ul>
 							</div>
 
@@ -176,7 +325,7 @@
 								<h3>Social</h3>
 								<ul class="icons alt">
 									<li><a href="https://www.linkedin.com/in/patricia-amos/" class="icon brands alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
-									<li><a href="https://github.com/patricia-amos" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+									<li><a href="https://github.com/patricia-amos/Portfolio" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
 								</ul>
 							</section>
 						</section>
